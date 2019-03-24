@@ -13,3 +13,6 @@ alias aptdate='sudo apt-get update'
 
 alias cd..='cd ..'
 alias ls..='ls .. --color=auto'
+
+alias rot13='tr A-Za-z N-ZA-Mn-za-m'
+alias rot47='tr ''!-~'' ''P-~!-O'
