@@ -7,4 +7,4 @@ Set up new home env and append:
 
 Just update `.bash_aliases`
 
-    curl https://raw.githubusercontent.com/srsutherland/bashrc/master/.bash_aliases.sh > ~/.bash_aliases
+    curl https://raw.githubusercontent.com/srsutherland/bashrc/master/.bash_aliases > ~/.bash_aliases
