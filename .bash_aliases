@@ -8,7 +8,7 @@ alias ld='ls -d --color=auto */' #this shadows a linker but I'm fine with that
 
 alias rc='ls ~/.*rc ~/.bash_aliases'
 alias catrc='if [ -f ~/.bash_aliases ]; then cat ~/.bash_aliases; else cat ~/.bashrc; fi'
-alias realias='if [ -f ~/.bash_aliases ]; then sh ~/.bash_aliases; else sh ~/.bashrc; fi'
+alias realias='if [ -f ~/.bash_aliases ]; then source ~/.bash_aliases; else source ~/.bashrc; fi'
 
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias aptdate='sudo apt-get update'
