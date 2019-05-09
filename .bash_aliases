@@ -23,3 +23,5 @@ alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 alias rot47='tr ''!-~'' ''P-~!-O'
 
 alias ccat='pygmentize'
+
+alias grepath='echo $PATH | grep '
