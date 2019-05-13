@@ -5,3 +5,4 @@ curl $repo/.bash_aliases >> .bash_aliases
 curl $repo/.bashrc >> .bashrc
 curl $repo/.inputrc >> .inputrc 
 curl $repo/.vimrc >> .vimrc 
+curl $repo/.psrc >> .psrc 

@@ -1,5 +1,5 @@
 export PS1="\e[0m\e[1m\e[92m\t\e[0m:\e[1m\e[38;5;99m\w\e[0m\\$ "
 
-lastcmd() { LASTCMD=$(history 1 | cut -c8-); TWD=$(dirs +0); echo -ne "\e]2;$LASTCMD : $TWD\a\e]1;$LASTCMD\a"; }
+lastcmd() { LASTCMD=$(history 1 | cut -c8-); TWD=$(dirs +0); echo -ne "\e]0;$LASTCMD : $TWD\a"; }
 export PROMPT_COMMAND=lastcmd
 
