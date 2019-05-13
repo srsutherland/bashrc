@@ -19,6 +19,10 @@ alias ai='sudo apt-get install'
 alias cd..='cd ..'
 alias ls..='ls .. --color=auto'
 
+alias h='history'
+alias pu='pushd'
+alias po='popd'
+
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 alias rot47='tr ''!-~'' ''P-~!-O'
 
