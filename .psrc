@@ -1,4 +1,9 @@
-export PS1="\[\e[0m\e[1m\e[92m\t\e[0m:\e[1m\e[38;5;99m\w\e[0m\\$\] "
+CPURP="\e[38;5;99m"
+CGREEN="\e[92m"
+FRESET="\e[0m"
+FBOLD="\e1m"
+
+export PS1="\[${FRESET}${CBOLD}${CGREEN}\t${FRESET}:${CBOLD}${CPURP}\w${FRESET}\\$\] "
 
 lastcmd() { LASTCMD=$(history 1 | cut -c8-); TWD=$(dirs +0); echo -ne "\e]0;$LASTCMD : $TWD\a"; }
 export PROMPT_COMMAND=lastcmd
