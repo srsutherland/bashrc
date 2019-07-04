@@ -23,6 +23,13 @@ alias h='history'
 alias pu='pushd'
 alias po='popd'
 
+alias version="cat /etc/os-release || lsb_release -a || hostnamectl"
+alias -- --version="cat /etc/os-release || lsb_release -a || hostnamectl"
+
+alias gits='git status -s'
+alias gita='git status -s && read -p "Add all? " -n 1 -r; if [[ $REPLY =~ ^[Yy]$ ]]; then echo; git add .; fi'
+alias gitm='git commit -m'
+
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 alias rot47='tr ''!-~'' ''P-~!-O'
 
