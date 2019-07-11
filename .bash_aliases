@@ -11,10 +11,10 @@ alias catrc='if [ -f ~/.bash_aliases ]; then cat ~/.bash_aliases; else cat ~/.ba
 alias realias='if [ -f ~/.bash_aliases ]; then source ~/.bash_aliases; else source ~/.bashrc; fi'
 alias vilias='if [ -f ~/.bash_aliases ]; then vi ~/.bash_aliases; else vi ~/.bashrc; fi'
 
-alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-alias aptdate='sudo apt-get update'
-alias install='sudo apt-get install' #Shadows built-in "install"
-alias ai='sudo apt-get install'
+alias upgrade='sudo apt update && sudo apt upgrade'
+alias aptdate='sudo apt update'
+alias install='sudo apt install' #Shadows built-in "install"
+alias ai='sudo apt install'
 
 alias cd..='cd ..'
 alias ls..='ls .. --color=auto'
