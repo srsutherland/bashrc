@@ -6,6 +6,8 @@ alias ll='ls -AlF --color=auto'
 alias l.='ls -d --color=auto .!(|.)'
 alias ld='ls -d --color=auto */ 2> /dev/null' #Shadows built-in linker
 
+alias sh=$SHELL
+
 alias rc='ls ~/.*rc ~/.bash_aliases'
 alias catrc='if [ -f ~/.bash_aliases ]; then cat ~/.bash_aliases; else cat ~/.bashrc; fi'
 alias realias='if [ -f ~/.bash_aliases ]; then source ~/.bash_aliases; else source ~/.bashrc; fi'
