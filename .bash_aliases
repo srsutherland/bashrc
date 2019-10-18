@@ -38,3 +38,7 @@ alias rot47='tr ''!-~'' ''P-~!-O'
 alias ccat='pygmentize'
 
 alias grepath='echo $PATH | grep '
+
+if [ -f ~/.local_aliases ]; then
+    . ~/.local_aliases 
+fi
