@@ -16,7 +16,7 @@ else
     echo \"". ~/.bash_aliases"\" already in \~/.bashrc
 fi
 if ! grep -q -F ". ~/.psrc" ~/.bashrc; then
-    echo "if [ -f ~/.psrc]; then" >> ~/.bashrc
+    echo "if [ -f ~/.psrc ]; then" >> ~/.bashrc
     echo "    . ~/.psrc" >> ~/.bashrc
     echo "fi" >> ~/.bashrc
     echo added \"". ~/.psrc"\" to \~/.bashrc
