@@ -1,11 +1,14 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 echo Running from $DIR
+
 echo link \~/.bash_aliases -\> $DIR/.bash_aliases
-ln -s $DIR/.bash_aliases ~/.bash_aliases
+ln -s "$DIR"/.bash_aliases ~/.bash_aliases
+
 echo link \~/.vimrc -\> $DIR/.vimrc 
-ln -s $DIR/.vimrc ~/.vimrc
+ln -s "$DIR"/.vimrc ~/.vimrc
+
 echo link \~/.inputrc -\> $DIR/.inputrc
-ln -s $DIR/.inputrc ~/.inputrc
+ln -s "$DIR"/.inputrc ~/.inputrc
 
 if ! grep -q -F ". ~/.bash_aliases" ~/.bashrc; then
     echo "if [ -f ~/.bash_aliases ]; then" >> ~/.bashrc
