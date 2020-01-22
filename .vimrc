@@ -20,3 +20,10 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+set listchars=tab:‣\ ,trail:·,nbsp:␣,precedes:«,extends:»,eol:¬
+
+"
+" W to sudo save file when not root
+" 
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
