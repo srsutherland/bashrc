@@ -1,3 +1,7 @@
+function einfo() { echo -e "\033[1;36m${@}\033[0m" 2>&1; }
+function ewarn() { echo -e "\033[1;33m${@}\033[0m" 2>&1; }
+function eerror() { echo -e "\033[1;31m${@}\033[0m" 2>&1; }
+
 # Set Termcap vars for prettier manpages
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
