@@ -24,6 +24,20 @@ set wrap "Wrap lines
 set listchars=tab:‣\ ,trail:·,nbsp:␣,precedes:«,extends:»,eol:¬
 
 "
+" Automatically toggle paste mode
+"
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
+
+"
 " W to sudo save file when not root
 " 
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
