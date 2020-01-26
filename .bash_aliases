@@ -25,8 +25,8 @@ alias h='history'
 alias pu='pushd'
 alias po='popd'
 
-alias version="cat /etc/os-release || lsb_release -a || hostnamectl"
-alias -- --version="cat /etc/os-release || lsb_release -a || hostnamectl"
+alias version="lsb_release -a || cat /etc/os-release || hostnamectl"
+alias -- --version="lsb_release -a || cat /etc/os-release || hostnamectl"
 
 alias gits='git status -s'
 alias gita='git status -s && read -p "Add all? " -n 1 -r; if [[ $REPLY =~ ^[Yy]$ ]]; then echo; git add .; fi; git status -s'
