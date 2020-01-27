@@ -1,4 +1,6 @@
-# These belong in ~/.bash_aliases
+#!/bin/bash
+# ~/.bash_aliases : sourced by ~/.bashrc
+
 alias ls='ls --color=auto'
 alias l='ls -CF --color=auto'
 alias la='ls -A --color=auto'
@@ -13,10 +15,16 @@ alias catrc='if [ -f ~/.bash_aliases ]; then cat ~/.bash_aliases; else cat ~/.ba
 alias realias='if [ -f ~/.bash_aliases ]; then source ~/.bash_aliases; else source ~/.bashrc; fi'
 alias vilias='if [ -f ~/.bash_aliases ]; then vi ~/.bash_aliases; else vi ~/.bashrc; fi'
 
-alias upgrade='sudo apt update && sudo apt upgrade'
-alias aptdate='sudo apt update'
-alias install='sudo apt install' #Shadows built-in "install"
-alias ai='sudo apt install'
+if declare -F aptdate > /dev/null; then
+    alias upgrade='aptdate && sudo apt upgrade'
+    alias install='aptdate && sudo apt install' #Shadows built-in "install"
+    alias ai='aptdate && sudo apt install'
+else
+    alias upgrade='sudo apt update && sudo apt upgrade'
+    alias aptdate='sudo apt update'
+    alias install='sudo apt install' #Shadows built-in "install"
+    alias ai='sudo apt install'
+fi
 
 alias cd..='cd ..'
 alias ls..='ls .. --color=auto'

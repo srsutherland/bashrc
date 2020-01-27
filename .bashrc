@@ -11,6 +11,31 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;36m'
 
+# Run sudo spt update if it has not run recently
+function aptdate() {
+    local updateInterval="${1}"
+	
+	local aptDate="$(stat -c %Y '/tmp/apt_updated')"
+    local nowDate="$(date +'%s')"
+	local lastAptGetUpdate=$((nowDate - aptDate))
+
+    if [[ -z $updateInterval ]]
+    then
+        # Default To 24 hours
+        updateInterval="$((24 * 60 * 60))"
+    fi
+
+    if [[ "${lastAptGetUpdate}" -gt "${updateInterval}" ]]
+    then
+        einfo "apt update"
+        sudo apt update -m
+        touch /tmp/apt_updated
+    else
+        local lastUpdate="$(date -u -d @"${lastAptGetUpdate}" +'%-Hh %-Mm %-Ss')"
+        einfo "Skip apt-get update because its last run was '${lastUpdate}' ago"
+    fi
+}
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
