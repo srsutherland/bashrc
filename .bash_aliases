@@ -8,9 +8,16 @@ alias ll='ls -AlF --color=auto'
 alias l.='ls -d --color=auto .!(|.)'
 alias ld='ls -d --color=auto */ 2> /dev/null' #Shadows built-in linker
 
+alias cd..='cd ..'
+alias ls..='ls .. --color=auto'
+
+alias h='history'
+alias pu='pushd'
+alias po='popd'
+
 alias sh=$SHELL
 
-alias rc='ls ~/.*rc ~/.bash_aliases'
+alias rc='ls ~/.*rc ~/.*_aliases'
 alias catrc='if [ -f ~/.bash_aliases ]; then cat ~/.bash_aliases; else cat ~/.bashrc; fi'
 alias realias='if [ -f ~/.bash_aliases ]; then source ~/.bash_aliases; else source ~/.bashrc; fi'
 alias vilias='if [ -f ~/.bash_aliases ]; then vi ~/.bash_aliases; else vi ~/.bashrc; fi'
@@ -26,13 +33,6 @@ else
     alias ai='sudo apt install'
 fi
 
-alias cd..='cd ..'
-alias ls..='ls .. --color=auto'
-
-alias h='history'
-alias pu='pushd'
-alias po='popd'
-
 alias version="lsb_release -a || cat /etc/os-release || hostnamectl"
 alias -- --version="lsb_release -a || cat /etc/os-release || hostnamectl"
 
@@ -47,6 +47,10 @@ alias ccat='pygmentize'
 
 alias grepath='echo $PATH | grep '
 
+alias ?='echo returned $?'
+alias +x='chmod +x'
+
+# aliases local to only this machine (untracked)
 if [ -f ~/.local_aliases ]; then
     . ~/.local_aliases 
 fi
