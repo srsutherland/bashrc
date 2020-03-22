@@ -1,14 +1,20 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 echo Running from $DIR
 
-echo link \~/.bash_aliases -\> $DIR/.bash_aliases
-ln -s "$DIR"/.bash_aliases ~/.bash_aliases
+function einfo() { echo -e "\033[1;36m${@}\033[0m" 2>&1; }
+function ewarn() { echo -e "\033[1;33m${@}\033[0m" 2>&1; }
+function eerror() { echo -e "\033[1;31m${@}\033[0m" 2>&1; }
 
-echo link \~/.vimrc -\> $DIR/.vimrc 
-ln -s "$DIR"/.vimrc ~/.vimrc
+link_file () {
+    einfo "link ~/$1 -> $DIR/$1"
+    ln -s "$DIR/$1" ~/"$1"
+}
 
-echo link \~/.inputrc -\> $DIR/.inputrc
-ln -s "$DIR"/.inputrc ~/.inputrc
+files=(.bash_aliases .vimrc .inputrc)
+
+for file in "${files[@]}"; do
+    link_file "$file"
+done
 
 if ! grep -q -F ". ~/.bash_aliases" ~/.bashrc; then
     echo "if [ -f ~/.bash_aliases ]; then" >> ~/.bashrc
