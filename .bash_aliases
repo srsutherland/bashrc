@@ -9,6 +9,11 @@ alias l.='ls -d --color=auto .!(|.)'
 alias ld='ls -d --color=auto */ 2> /dev/null' #Shadows built-in linker
 
 alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias ls..='ls .. --color=auto'
 
 alias h='history'
@@ -46,6 +51,10 @@ alias rot47='tr ''!-~'' ''P-~!-O'
 alias ccat='pygmentize'
 
 alias grepath='echo $PATH | grep '
+alias greph='history | grep '
+function gran() { local cmd="$1"; shift; man $cmd | grep -B1 -A3 "$@"; }
+
+function filesize() { ls -lah $1 | awk -F " " {'print $5'}; }
 
 alias ?='echo returned $?'
 alias +x='chmod +x'
