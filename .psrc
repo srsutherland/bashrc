@@ -5,6 +5,10 @@ FBOLD="\[\e[1m\]"
 
 export PS1="${FRESET}${FBOLD}${CGREEN}\t${FRESET}:${FBOLD}${CPURP}\w${FRESET}\\$ "
 
-lastcmd() { LASTCMD=$(history 1 | cut -c8-); TWD=$(dirs +0); echo -ne "\e]0;$LASTCMD : $TWD\a"; }
+lastcmd() { 
+    LASTCMD=$(history 1 | cut -c8-) 
+    WD=$(dirs +0) 
+    printf "\e]0; %s : %s\a" "$LASTCMD" "$WD" > /dev/tty
+}
+trap 'lastcmd' DEBUG
 export PROMPT_COMMAND=lastcmd
-
