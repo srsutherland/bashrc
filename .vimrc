@@ -31,6 +31,8 @@ set wrap "Wrap lines
 
 set listchars=tab:‣\ ,trail:·,nbsp:␣,precedes:«,extends:»,eol:¬
 
+let g:is_bash = 1 "sets the default filetype for unknown shell scripts to bash
+
 "
 " Automatically toggle paste mode
 "
