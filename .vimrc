@@ -1,3 +1,8 @@
+scriptencoding utf-8 
+
+" Start in utf8 mode
+set encoding=utf-8
+
 " Turn on line numbers
 set number
 
@@ -11,6 +16,7 @@ catch
     catch
     endtry
 endtry
+
 " Use spaces instead of tabs
 set expandtab
 
@@ -29,9 +35,13 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-set listchars=tab:‣\ ,trail:·,nbsp:␣,precedes:«,extends:»,eol:¬
+try
+    set listchars=tab:‣\ ,trail:·,nbsp:␣,precedes:«,extends:»,eol:¬
+catch
+endtry
 
-let g:is_bash = 1 "sets the default filetype for unknown shell scripts to bash
+"sets the default filetype for unknown shell scripts to bash
+let g:is_bash = 1
 
 "
 " Automatically toggle paste mode
