@@ -1,9 +1,11 @@
-CPURP="\[\e[38;5;99m\]"
-CGREEN="\[\e[92m\]"
-FRESET="\[\e[0m\]"
-FBOLD="\[\e[1m\]"
+PURP="\[\e[38;5;99m\]"
+GREEN="\[\e[92m\]"
+PURP2="\[\e[38;5;69m\]"
+MINT="\[\e[38;5;41m\]"
+RESET="\[\e[0m\]"
+BOLD="\[\e[1m\]"
 
-export PS1="${FRESET}${FBOLD}${CGREEN}\t${FRESET}:${FBOLD}${CPURP}\w${FRESET}\\$ "
+export PS1="${RESET}${BOLD}${GREEN}\t${RESET}:${BOLD}${PURP}\w${RESET}\\$ "
 
 lastcmd() { 
     LASTCMD=$(history 1 | cut -c8-) 
