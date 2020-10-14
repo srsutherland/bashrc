@@ -16,7 +16,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls..='ls .. --color=auto'
 
-function mkd() { mkdir $1 && cd $1 }
+function mkd() { mkdir $1 && cd $1; }
 
 alias h='history'
 alias pu='pushd'
