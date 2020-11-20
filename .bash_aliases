@@ -16,6 +16,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls..='ls .. --color=auto'
 
+alias cdd="cd $XDG_DOWNLOAD_DIR"
+
 function mkd() { mkdir $1 && cd $1; }
 
 alias h='history'
@@ -24,7 +26,7 @@ alias po='popd'
 
 alias sh=$SHELL
 
-alias rc='ls ~/.*rc ~/.*_aliases'
+alias rc='ls ~/.*rc ~/.*_aliases ~/.config/sh/*'
 alias catrc='if [ -f ~/.bash_aliases ]; then cat ~/.bash_aliases; else cat ~/.bashrc; fi'
 alias realias='if [ -f ~/.bash_aliases ]; then source ~/.bash_aliases; else source ~/.bashrc; fi'
 alias vilias='if [ -f ~/.bash_aliases ]; then vi ~/.bash_aliases; else vi ~/.bashrc; fi'
@@ -66,6 +68,9 @@ function filesize() { ls -lah $1 | awk -F " " {'print $5'}; }
 
 alias ?='echo returned $?'
 alias +x='chmod +x'
+
+alias ffmpeg="ffmpeg -hide_banner"
+alias ytdl="youtube-dl -4"
 
 # aliases local to only this machine (untracked)
 if [ -f ~/.local_aliases ]; then
