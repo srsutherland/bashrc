@@ -45,9 +45,10 @@ fi
 alias version="lsb_release -a || cat /etc/os-release || hostnamectl"
 alias -- --version="lsb_release -a || cat /etc/os-release || hostnamectl"
 
-alias gits='git cherry -v && git status -s'
+alias gits='git cherry -v 2> /dev/null ||echo "Could not find remote branch"; git status -s'
 alias gita='git status -s && read -p "Add all? " -n 1 -r; if [[ $REPLY =~ ^[Yy]$ ]]; then echo; git add .; fi; git status -s'
 alias gitm='git commit -m'
+alias gitc='git commit'
 
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 alias rot47='tr ''!-~'' ''P-~!-O'
