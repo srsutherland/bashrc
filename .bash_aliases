@@ -67,6 +67,8 @@ function gran() { local cmd="$1"; shift; man $cmd | grep -B1 -A3 "$@"; }
 
 function filesize() { ls -lah $1 | awk -F " " {'print $5'}; }
 
+= () { bc -l <<< "$*"; }
+
 alias ?='echo returned $?'
 alias +x='chmod +x'
 
