@@ -54,10 +54,10 @@ alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 alias rot47='tr ''!-~'' ''P-~!-O'
 
 alias myip='curl icanhazip.com'
-alias ip4='curl ipv4.icanhazip.com'
-alias myip4='curl ipv4.icanhazip.com'
-alias ip6='curl ipv6.icanhazip.com'
-alias myip6='curl ipv6.icanhazip.com'
+alias ip4='curl -4 icanhazip.com'
+alias myip4='curl -4 icanhazip.com'
+alias ip6='curl -6 icanhazip.com'
+alias myip6='curl -6 icanhazip.com'
 
 alias ccat='pygmentize'
 
