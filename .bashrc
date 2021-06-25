@@ -11,7 +11,7 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;36m'
 
-# Run sudo spt update if it has not run recently
+# Run sudo apt update if it has not run recently
 function aptdate() {
     local updateInterval="${1}"
 	
