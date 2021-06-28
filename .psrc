@@ -1,11 +1,12 @@
-PURP="\[\e[38;5;99m\]"
 GREEN="\[\e[92m\]"
-PURP2="\[\e[38;5;69m\]"
-MINT="\[\e[38;5;41m\]"
-RESET="\[\e[0m\]"
-BOLD="\[\e[1m\]"
+Purp="\[\e[38;5;99m\]"   # Cool Purple  #63F
+LBlue="\[\e[38;5;69m\]"  # Light Blue   #36F
+Green2="\[\e[38;5;41m\]" # Bright Green #0C3
+Mint="\[\e[38;5;85m\]"   # Light Mint   #3F9
+R="\[\e[0m\]" # Reset
+B="\[\e[1m\]" # Bold
 
-export PS1="${RESET}${BOLD}${GREEN}\t${RESET}:${BOLD}${PURP}\w${RESET}\\$ "
+export PS1="${R}${B}${Mint}\t${R}:${B}${Purp}\w${R}\\$ "
 
 lastcmd() { 
     LASTCMD=$(history 1 | cut -c8-) 
