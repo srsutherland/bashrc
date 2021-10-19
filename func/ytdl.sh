@@ -13,6 +13,7 @@ function loopdl() {
     echo -e "\033[1;36mcd ${base_dir}\033[0m"
     echo -en "\033[1;35mytdl: \033[0m"
     while read url; do
+        echo -e "\033[33m$url\033[0m"
         if [[ "$url" =~ t(witter)?\.com? ]]; then
             next_dir="${base_dir}/twitter"
         else
@@ -23,7 +24,7 @@ function loopdl() {
             eval cd "$cur_dir"
             echo -e "\033[1;36mcd ${cur_dir}\033[0m"
         fi
-        echo -e "\033[1;33m$(youtube-dl -4 --get-title "$url")\033[0m"
+        echo -e "\033[1;33m$(youtube-dl -4 --get-title --no-playlist "$url")\033[0m"
         youtube-dl -4 --no-playlist "$url"
         echo -en "\033[1;35mytdl: \033[0m"
     done
