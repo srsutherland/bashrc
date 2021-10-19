@@ -30,6 +30,7 @@ alias rc='ls ~/.*rc ~/.*_aliases ~/.config/sh/*'
 alias catrc='if [ -f ~/.bash_aliases ]; then cat ~/.bash_aliases; else cat ~/.bashrc; fi'
 alias realias='if [ -f ~/.bash_aliases ]; then source ~/.bash_aliases; else source ~/.bashrc; fi'
 alias vilias='if [ -f ~/.bash_aliases ]; then vi ~/.bash_aliases; else vi ~/.bashrc; fi'
+alias rctrace="/bin/bash -lixc exit 2>&1 | sed -n 's/^+* \\(source\\|\\.\\) //p' | sed \"s+\$HOME+~+\""
 
 if declare -F aptdate > /dev/null; then
     alias upgrade='aptdate && sudo apt upgrade'
