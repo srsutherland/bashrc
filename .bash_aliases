@@ -16,6 +16,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls..='ls .. --color=auto'
 
+#Lists links->targets, short format
+alias llink="find . -maxdepth 1 -type l -printf '@ESC[1;96m%f@ESC[0m\t-> @ESC[93m%l@ESC[0m\n' | sed -e \"s|@ESC|\$(echo -e '\033')|g\" -e \"s|$HOME|~|g\" | column -t -s $'\t'"
+
 alias cdd="cd $XDG_DOWNLOAD_DIR"
 
 function mkd() { mkdir $1 && cd $1; }
