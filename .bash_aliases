@@ -64,6 +64,11 @@ alias ip6='curl -6 icanhazip.com'
 alias myip6='curl -6 icanhazip.com'
 
 alias ccat='pygmentize'
+if ! command -v bat &> /dev/null; then
+    if command -v batcat &> /dev/null; then
+        alias bat='batcat'
+    fi
+fi
 
 alias grepath='echo $PATH | grep '
 alias greph='history | grep '
