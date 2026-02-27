@@ -10,7 +10,7 @@ link_file () {
     ln -s "$DIR/$1" ~/"$1"
 }
 
-files=(.bash_aliases .vimrc .inputrc)
+files=(.bash_aliases .vimrc .inputrc .npmrc)
 
 for file in "${files[@]}"; do
     link_file "$file"
